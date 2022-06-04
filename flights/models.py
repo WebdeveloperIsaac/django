@@ -18,10 +18,10 @@ class Flight(models.Model):
     def __str__(self):
         return f"{self.id}:{self.origin} to {self.destination} "
 
-class Passenger(models.Model):
+class Passengers(models.Model):
     fname = models.CharField(max_length=64)
     lname = models.CharField(max_length=64)        
-    flights = models.ManyToManyField(Flight)
+    flights = models.ManyToManyField(Flight,blank=True,related_name="passengers")
 
     def __str__(self):
         return f"{self.fname} {self.lname}"
