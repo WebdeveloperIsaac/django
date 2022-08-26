@@ -1,0 +1,9 @@
+{% extends "taskm/layout.html" %}
+
+{% block body %}
+<h1>My Tasks For Today</h1>
+        {% for task in task %}
+            <li>{{task}}</li>
+        {% endfor  %}
+        <button><a href="{% url 'taskm:add' %}">Let's Add Som Tasks</a></button>
+{% endblock %}
